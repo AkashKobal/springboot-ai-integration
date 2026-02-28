@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Image AI</title>
+</head>
+<body>
+
+<h2>Image AI</h2>
+
+<form action="/image"
+      method="post"
+      enctype="multipart/form-data">
+
+    <textarea name="prompt" required></textarea>
+    <br>
+    <input type="file" name="image" required>
+    <br>
+    <button type="submit">Generate</button>
+</form>
+
+<div th:if="${response}">
+    <h3>Response:</h3>
+    <p th:text="${response}"></p>
+</div>
+
+<br>
+<a href="/text">Go to Text AI</a>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Text AI</title>
+</head>
+<body>
+
+<h2>Text AI</h2>
+
+<form action="/text" method="post">
+    <textarea name="prompt" required></textarea>
+    <button type="submit">Generate</button>
+</form>
+
+<div th:if="${response}">
+    <h3>Response:</h3>
+    <p th:text="${response}"></p>
+</div>
+
+<br>
+<a href="/image">Go to Image AI</a>
+
+</body>
+</html>
